@@ -1,3 +1,5 @@
+Here's the content formatted for a README.md file:
+
 ---
 
 # Automated Google Form Filler And SMTP Based Email Sender
@@ -69,7 +71,6 @@ selenium_assignment/
 
 3. **Click the "Send Email" button to send the email with the required attachments.**
 
-
 ## Author
 
 - [Koustav Das](https://github.com/KoustavD1423)
@@ -79,5 +80,3 @@ selenium_assignment/
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-This `README.md` now includes a detailed documentation of your approach along with the necessary instructions and project structure.
