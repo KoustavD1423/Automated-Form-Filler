@@ -1,51 +1,83 @@
 ---
-### Automated Google Form Filling
 
-1. **Selection of Tools**: 
-   - I chose Selenium for web automation due to its capabilities in simulating user interactions with web applications. ChromeDriver was used as the WebDriver to control the Chrome browser.
+# Automated Google Form Filler And SMTP Based Email Sender
 
-2. **Setting Up the Environment**: 
-   - I ensured that Python and necessary libraries (Selenium, ChromeDriver) were installed.
-   - Installed required Python packages using `pip install selenium`.
+This project automates the filling and submission of a Google Form using Selenium and provides a Flask web application to send an email with the required files.
 
-3. **Writing the Automation Script**:
-   - The script `form.py` was written to:
-     - Open the Google Form URL.
-     - Locate the input fields using appropriate selectors (like XPATH).
-     - Enter the required data into these fields.
-     - Submit the form and capture a screenshot of the confirmation page.
+## Project Structure
 
-4. **Running the Script**:
-   - Executed the `form.py` script to automatically fill and submit the Google Form, and saved the confirmation screenshot.
+```
+selenium_assignment/
+├── app.py
+├── form.py
+├── requirements.txt
+├── README.md
+├── templates/
+│   └── index.html
+└── static/
+    ├── confirmation_page.png
+    ├── your_resume.pdf
+    └── work_samples.zip
+```
 
-### Flask Application for Email Sending
+## Requirements
 
-1. **Selection of Tools**:
-   - I chose Flask for the web application framework due to its simplicity and Flask-Mail for handling email sending.
+- Python 3.x
+- Flask
+- Flask-Mail
+- Selenium
+- Chrome WebDriver
 
-2. **Setting Up the Environment**:
-   - Installed Flask and Flask-Mail using `pip install Flask Flask-Mail`.
-   - Configured the Flask application in `app.py`.
+## Setup
 
-3. **Email Configuration**:
-   - Configured SMTP settings for sending emails via Gmail by providing the SMTP server details, port, and login credentials.
-   - Enabled "Less secure app access" in my Google account to allow the Flask app to send emails.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/KoustavD1423/selenium_assignment.git
+    cd selenium_assignment
+    ```
 
-4. **Building the Flask App**:
-   - Created the `app.py` file to define routes for the Flask application.
-   - Set up the `/` route to render an HTML form for email sending.
-   - Set up the `/send_email` route to handle the form submission, construct the email with attachments, and send it using Flask-Mail.
+2. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-5. **Running the Flask Application**:
-   - Executed the `app.py` script to start the Flask server.
-   - Opened the web browser and navigated to `http://127.0.0.1:5000/` to access the email sending form.
-   - Submitted the form to send the email with the attachments, including the screenshot of the Google Form submission confirmation and my resume.
+3. **Update email configuration:**
+    - Edit `app.py` and update the email configuration (`MAIL_USERNAME`, `MAIL_PASSWORD`, etc.).
 
-### Final Steps
+4. **Prepare required files:**
+    - Ensure `confirmation_page.png`, `resume.pdf`, are placed in the `static` directory.
 
-- Ensured all necessary files (confirmation screenshot, resume, documentation) were placed in the `static` directory for attachment in the email.
-- Verified that the email was sent correctly with all the required attachments.
+## Usage
 
-This approach provided a seamless way to automate form submission and email sending using Python's Selenium for web automation and Flask for web application development.
+### Running the form-filling script
+
+1. **Execute the `form.py` script to automatically fill out and submit the Google Form. This script will also save a screenshot of the confirmation page in the `static` directory.**
+
+    ```bash
+    python form.py
+    ```
+
+### Running the Flask application
+
+1. **Start the Flask server by executing the `app.py` script. This will start a local web server.**
+
+    ```bash
+    python app.py
+    ```
+
+2. **Open your browser and navigate to `http://127.0.0.1:5000/`.**
+
+3. **Click the "Send Email" button to send the email with the required attachments.**
+
+
+## Author
+
+- [Koustav Das](https://github.com/KoustavD1423)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
+This `README.md` now includes a detailed documentation of your approach along with the necessary instructions and project structure.
